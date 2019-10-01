@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const IdeasSchema = new Schema({
-    user: {
+const UserSchema = new Schema({
+    name: {
         type: String,
         required: true
     },
-    title: {
+    email: {
         type: String,
         required: true,
     },
-    details: {
+    password: {
         type: String,
         required: true
     },
@@ -20,4 +20,4 @@ const IdeasSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('ideas', IdeasSchema);
+module.exports = mongoose.model('users', UserSchema);
