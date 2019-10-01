@@ -53,9 +53,9 @@ app.use((req, res, next) => {
     next();
 });
 
-
+const { generateDate } = require('./helpers/auth');
 // template engine
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.engine('handlebars', exphbs({ defaultLayout: 'main', helpers: { generateDate: generateDate } }));
 app.set('view engine', 'handlebars');
 
 // routes init

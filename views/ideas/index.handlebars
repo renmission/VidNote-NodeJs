@@ -1,12 +1,22 @@
 {{#each ideas}}
-<div class="card card-body mt-5">
-    <h3>{{title}}</h3>
-    <p>{{details}}</p>
-    <a href="/ideas/edit/{{id}}" class="btn btn-dark btn-block mb-1">Update</a>
-    <form action="/ideas/delete/{{id}}?_method=DELETE" method="post">
-        <input type="submit" class="btn btn-danger btn-block" value="Delete">
-    </form>
-</div>
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-around align-items-center font-weight-bold mb-2">
+        <h3></h3>
+
+        <a href="/ideas/edit/{{id}}" class="list-group-item-action">
+            <div class="d-flex justify-content-between">
+                <h3 class="mb-1">{{title}}</h3>
+                <small>{{generateDate date 'MMMM D, YYYY'}}</small>
+            </div>
+        </a>
+
+        <span class="badge ml-2">
+            <form action="/ideas/delete/{{id}}?_method=DELETE" method="post">
+                <button type="submit" class="btn btn-danger"><i class="fas fa-window-close"></i></button>
+            </form>
+        </span>
+    </li>
+</ul>
 {{else}}
-<p>There is no idea listed.</p>
+<p class="lead"> Nothing here yet! ☝️ Takes notes</p>
 {{/each}}
