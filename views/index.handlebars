@@ -5,7 +5,11 @@
             <div class="jumbotron text-center">
                 <h1 class="display-1">Welcome</h1>
                 <p class="lead">Note Down Ideas for your next Youtube videos</p>
+                {{#if user}}
+                <a href="/ideas/add" class="btn btn-dark">Note Your Idea</a>
+                {{else}}
                 <a href="/users/register" class="btn btn-dark">Note Your Idea</a>
+                {{/if}}
             </div>
 
         </div>
